@@ -1,0 +1,2 @@
+jdata_conf.c:62:8:read_file	8	static
+jdata_conf.c:69:8:write_file	8	static

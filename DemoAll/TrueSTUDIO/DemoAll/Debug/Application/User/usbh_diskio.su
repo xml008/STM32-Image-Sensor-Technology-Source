@@ -1,0 +1,5 @@
+usbh_diskio.c:101:9:USBH_initialize	0	static
+usbh_diskio.c:113:9:USBH_status	8	static
+usbh_diskio.c:141:9:USBH_read	72	static
+usbh_diskio.c:234:9:USBH_ioctl	64	static
+usbh_diskio.c:185:9:USBH_write	72	static
