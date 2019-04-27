@@ -54,7 +54,6 @@
 #include "dcmi.h"
 #include "dma.h"
 #include "fatfs.h"
-#include "gfxsimulator.h"
 #include "i2c.h"
 #include "jpeg.h"
 #include "usart.h"
@@ -102,24 +101,24 @@ void MX_USB_HOST_Process(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-SDRAM_DATA uint16_t SdramTestBuf[1024] ;
+SDRAM_DATA uint16_t SdramTestBuf[1024];
 void Sdram_Test(void)
 {
-  uint8_t txbuf[64] ;
-  for (int i = 0; i < 1024; i++)
-  {
-    SdramTestBuf[i] = i + 1 ;
-  }
-  for (int i = 0; i < 1024; i++)
-  {
-    sprintf(txbuf, "Buf[%04d]0x%p=%d ", i, &SdramTestBuf[i], SdramTestBuf[i]) ;
-    BSP_USBCDC_SendTxtTest((char*) txbuf) ;
-    if (i % 16 == 0)
-    {
-      BSP_USBCDC_SendTxtTest("\r\n") ;
-      HAL_Delay(10) ;
-    }
-  }
+	uint8_t txbuf[64];
+	for (int i = 0; i < 1024; i++)
+	{
+		SdramTestBuf[i] = i + 1;
+	}
+	for (int i = 0; i < 1024; i++)
+	{
+		sprintf(txbuf, "Buf[%04d]0x%p=%d ", i, &SdramTestBuf[i], SdramTestBuf[i]);
+		BSP_USBCDC_SendTxtTest((char*) txbuf);
+		if (i % 16 == 0)
+		{
+			BSP_USBCDC_SendTxtTest("\r\n");
+			HAL_Delay(10);
+		}
+	}
 }
 /* USER CODE END 0 */
 
@@ -132,6 +131,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+  
 
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
@@ -167,30 +167,29 @@ int main(void)
   MX_I2C1_Init();
   MX_JPEG_Init();
   MX_USART2_UART_Init();
-  MX_GFXSIMULATOR_Init();
   /* USER CODE BEGIN 2 */
-  BSP_SDRAM_Configuration();
-  BSP_OVCAM_Configuration();
+	BSP_SDRAM_Configuration();
+	BSP_OVCAM_Configuration();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  BSP_OVCAM_StartSnapshot();
+	BSP_OVCAM_StartSnapshot();
 
-  while (1)
-  {
+	while (1)
+	{
 
     /* USER CODE END WHILE */
     MX_USB_HOST_Process();
 
     /* USER CODE BEGIN 3 */
-    //BSP_USBCDC_SendTxtTest("hello world\r\n");
-    //HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin) ;
-    //HAL_Delay(500) ;
-    //Sdram_Test();
-    //HAL_Delay(2000) ;
-  }
+		//BSP_USBCDC_SendTxtTest("hello world\r\n");
+		//HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin) ;
+		//HAL_Delay(500) ;
+		//Sdram_Test();
+		//HAL_Delay(2000) ;
+	}
   /* USER CODE END 3 */
 }
 
@@ -264,10 +263,10 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	while (1)
+	{
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -282,8 +281,8 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 { 
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
-   tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+	/* User can add his own implementation to report the file name and line number,
+	 tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

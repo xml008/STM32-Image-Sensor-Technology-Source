@@ -457,13 +457,13 @@ void EmbImageAlgmath(EMB_IMAGE_PTR srcA, EMB_IMAGE_PTR srcB, EMB_IMAGE_PTR dst,f
   {
     return ;
   }
-  for (int j = 0; j < heigh; j++)//ROW
+  /*for (int j = 0; j < heigh; j++)//ROW
   {
     for (int i = 0; i < width; i++)//COL
     {
       dst[j][i] = a*srcA[j][i] + b*srcB[j][i] ;
     }
-  }
+  }*/
 }
 
 /**将源图像按给定参数变换到目标图像,图像逻辑运算,仅支持8位灰度图像

@@ -53,14 +53,13 @@
 /*-----------------------------------------------------------------------------/
 / Additional user header to be used  
 /-----------------------------------------------------------------------------*/
+
 #include "main.h"
 #include "stm32f7xx_hal.h"
 #include "usbh_core.h"
 #include "usbh_msc.h"
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* Handle for USB Host */
+/* Handle for USB Host */
 #define hUSB_Host hUsbHostFS
-                                                                                                                                                                                                                                                
 
 /*-----------------------------------------------------------------------------/
 / Function Configurations

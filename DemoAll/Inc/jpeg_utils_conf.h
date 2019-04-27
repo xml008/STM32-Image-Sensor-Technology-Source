@@ -16,14 +16,9 @@
 #define  __JPEG_UTILS_CONF_H__
 
 /* Includes ------------------------------------------------------------------*/
-#if defined (STM32F767xx) || (STM32F769xx) || (STM32F777xx) || (STM32F779xx) || (STM32F768AIYx) || (STM32F778AIYx)
+
 #include "stm32f7xx_hal.h"
 #include "stm32f7xx_hal_jpeg.h"
-
-#elif defined (STM32H743xx)|| (STM32H753xx) || (STM32H750xx)
-#include "stm32h7xx_hal.h"
-#include "stm32h7xx_hal_jpeg.h"
-#endif
 
 /* Private define ------------------------------------------------------------*/
 /** @addtogroup JPEG_Private_Defines
