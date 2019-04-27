@@ -101,25 +101,25 @@ void MX_USB_HOST_Process(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-SDRAM_DATA uint16_t SdramTestBuf[1024];
-void Sdram_Test(void)
-{
-	uint8_t txbuf[64];
-	for (int i = 0; i < 1024; i++)
-	{
-		SdramTestBuf[i] = i + 1;
-	}
-	for (int i = 0; i < 1024; i++)
-	{
-		sprintf(txbuf, "Buf[%04d]0x%p=%d ", i, &SdramTestBuf[i], SdramTestBuf[i]);
-		BSP_USBCDC_SendTxtTest((char*) txbuf);
-		if (i % 16 == 0)
-		{
-			BSP_USBCDC_SendTxtTest("\r\n");
-			HAL_Delay(10);
-		}
-	}
-}
+//SDRAM_DATA uint16_t SdramTestBuf[1024];
+//void Sdram_Test(void)
+//{
+//	uint8_t txbuf[64];
+//	for (int i = 0; i < 1024; i++)
+//	{
+//		SdramTestBuf[i] = i + 1;
+//	}
+//	for (int i = 0; i < 1024; i++)
+//	{
+//		sprintf(txbuf, "Buf[%04d]0x%p=%d ", i, &SdramTestBuf[i], SdramTestBuf[i]);
+//		BSP_USBCDC_SendTxtTest((char*) txbuf);
+//		if (i % 16 == 0)
+//		{
+//			BSP_USBCDC_SendTxtTest("\r\n");
+//			HAL_Delay(10);
+//		}
+//	}
+//}
 /* USER CODE END 0 */
 
 /**
